@@ -15,7 +15,7 @@ jobs:
       - uses: microsoft/playwright-github-action@v1
 
       - name: Install dependencies
-        run: pip install requirements.txt
+        run: pip install -r requirements.txt
 
       - name: run tests
         run: pytest --headed
