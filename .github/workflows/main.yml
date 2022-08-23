@@ -17,5 +17,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Install the required browsers
+        run: playwright install
+
       - name: run tests
         run: pytest --headed
