@@ -3,7 +3,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '55 13 * * *'
+    - cron: '36 20 * * *'
 
 jobs:
   e2e-tests:
