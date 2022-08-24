@@ -56,22 +56,27 @@ def br_signin_bonus(page, username):
     page.locator(".item_img > img").first.click()
     page.wait_for_url("https://www.blackrock.vip/#/sign")
 
-    page.locator("//div[@class='sign_btn over']/span[text()='Succeeded']").is_visible(timeout=120000)
-    text_value = page.locator("//div[@class='sign_btn over']/span[text()='Succeeded']").text_content()
-    print(text_value)
+    page.locator("//span[text()='You have signed in for ']").is_visible(timeout=120000)
+    text_value = page.locator("//div[contains(@class,'sign_btn')]//span[text()='Sign in' or text()='Succeeded']").text_content()
+    print("\ntext_value == "+text_value)
 
-    # bool_val = expect(page.locator("//div[@class='sign_btn over']/span[text()='Succeeded']")).to_have_text("Succeeded")
-    # print(bool_val)
-
-    if text_value == "Succeeded":
-        print("already sign in completed for the day...")
-    else:
+    if text_value == "Sign in":
         page.locator("div:has-text(\"Sign in\")").nth(3).click()
         expect(page.locator("//*[@id='app']/div[1]/div[5]/div/div[2]/span")).to_have_text("Succeeded")
-        page.locator("//*[@id='app']/div[1]/div[5]/div/div[3]").nth(2).click()
-        expect(page.locator("//*[@id='app']/div[1]/div[1]/div[4]/span")).to_have_text("Succeeded")
+        print("Sign In completed successfully...")
+    elif text_value == "Succeeded":
+        print("already sign in completed for the day...")
+    else :
+        print("error in program.. please check code...")
+        print(text_value)
 
-    page.locator("//*[@id='app']/div[1]/div[1]/div[1]").click()
+
+
+
+    # page.locator("//*[@id='app']/div[1]/div[1]/div[1]").click()
+
+
+    page.goto("https://www.blackrock.vip/#/index",timeout=12000)
     page.wait_for_url("https://www.blackrock.vip/#/index")
 
     # Click button:has-text("Confirm")
