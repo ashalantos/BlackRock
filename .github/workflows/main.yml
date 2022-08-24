@@ -1,25 +1,20 @@
 on:
+  push:
+    branches:
+      - main
   schedule:
-    - cron: "46 13 * * *"
-
-
+    - cron: '55 13 * * *'
 
 jobs:
   e2e-tests:
     runs-on: windows-latest
-
     steps:
       - uses: actions/checkout@v2
-
       - uses: actions/setup-python@v2
-
       - uses: microsoft/playwright-github-action@v1
-
       - name: Install dependencies
         run: pip install -r requirements.txt
-
       - name: Install the required browsers
         run: playwright install
-
       - name: run tests
         run: pytest --headed -s -n 4
