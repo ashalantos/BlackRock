@@ -8,6 +8,8 @@ ashal_airtel = "919995146005"
 ashal_jio = "917012486572"
 reliance_jio = "917012403113"
 mummy = "919539914580"
+papa = "9495276335"
+papa_jio = "8921532861"
 
 
 def test_ashal_airtel(page: Page):
@@ -24,6 +26,20 @@ def test_mummy(page: Page):
 
 def test_reliance_jio(page: Page):
     br_signin_bonus(page, reliance_jio)
+    
+
+
+   
+
+
+def test_papa(page: Page):
+    br_signin_bonus(page, papa)
+
+def test_papa_jio(page: Page):
+    br_signin_bonus(page, papa_jio)
+
+
+    
 
 
 def br_signin_bonus(page, username):
