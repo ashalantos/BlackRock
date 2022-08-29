@@ -66,7 +66,7 @@ def br_signin_bonus(page, username):
     page.wait_for_url("https://www.blackrock.vip/#/index")
 
     # Click button:has-text("Confirm")
-    #page.locator("button:has-text(\"Confirm\")").click()
+    page.locator("button:has-text(\"Confirm\")").click()
 
     # Click .item_img > img >> nth=0
     page.locator(".item_img > img").first.click()
@@ -96,7 +96,7 @@ def br_signin_bonus(page, username):
     page.wait_for_url("https://www.blackrock.vip/#/index")
 
     # Click button:has-text("Confirm")
-    #page.locator("button:has-text(\"Confirm\")").click()
+    page.locator("button:has-text(\"Confirm\")").click()
 
     # Click text=Account
     page.locator("text=Account").click()
@@ -111,7 +111,7 @@ def br_signin_bonus(page, username):
     page.wait_for_url("https://www.blackrock.vip/#/index")
 
     # Click button:has-text("Confirm")
-    #page.locator("button:has-text(\"Confirm\")").click()
+    page.locator("button:has-text(\"Confirm\")").click()
 
     # Click text=Account
     page.locator("text=Account").click()
