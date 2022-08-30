@@ -28,12 +28,12 @@ def test_reliance_jio(page: Page):
     br_signin_bonus(page, reliance_jio)
 
 
-def test_papa(page: Page):
-    br_signin_bonus(page, papa)
-
-
-def test_papa_jio(page: Page):
-    br_signin_bonus(page, papa_jio)
+# def test_papa(page: Page):
+#     br_signin_bonus(page, papa)
+#
+#
+# def test_papa_jio(page: Page):
+#     br_signin_bonus(page, papa_jio)
 
 
 def br_signin_bonus(page, username):
