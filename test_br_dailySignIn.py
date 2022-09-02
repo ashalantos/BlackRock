@@ -78,4 +78,4 @@ def br_signin_bonus(page, username):
 
 def click_confirm_button(page):
     print("Click confirm button")
-    page.locator("button:has-text(\"Confirm\")").click()
+    #page.locator("button:has-text(\"Confirm\")").click()
