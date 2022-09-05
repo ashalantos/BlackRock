@@ -77,11 +77,17 @@ def br_signin_bonus(page, username):
 
 
 def click_confirm_button(page):
-    print("Click confirm button")
-    confirm = page.locator("button:has-text(\"Confirm\")").is_visible(timeout=12000)
-    print("Confirm status - " + str(confirm))
-    if confirm:
-        page.locator("button:has-text(\"Confirm\")").click()
-            
-    
+    try:
+        page.locator("//button[contains(@class,'confirm')]").click()
+        print("confirm button clicked succesfully...")
+    except:
+        print("no confirm button present...")
 
+    # page.screenshot(path="timsheet_before_submission.png", full_page=True)
+    # test = page.wait_for_selector("//div[@class='popup12']", timeout=120000)
+    # print("test status - " + str(test))
+    # confirm = page.locator("//div[@class='popup']").is_visible(timeout=120000)
+    # page.screenshot(path="after.png", full_page=True)
+    # print("Confirm status - " + str(confirm))
+    # if confirm:
+    #     page.locator("//button[contains(@class,'confirm')]").click()
