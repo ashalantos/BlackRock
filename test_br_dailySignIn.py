@@ -78,9 +78,9 @@ def br_signin_bonus(page, username):
 
 def click_confirm_button(page):
     print("Click confirm button")
-    holiday = page.locator("button:has-text(\"Confirm\")").is_visible(timeout=12000)
-        print("Confirm status - " + str(holiday))
-    if holiday:
+    confirm = page.locator("button:has-text(\"Confirm\")").is_visible(timeout=12000)
+    print("Confirm status - " + str(confirm))
+    if confirm:
         page.locator("button:has-text(\"Confirm\")").click()
             
     
